@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <section class="FotoEservicos">
+        <section class="header-content">
             <img src="https://img.freepik.com/vetores-gratis/pet-shop-relacionados_24908-57968.jpg" alt="Foto do PetShop">
             <nav>
                 <ul>
@@ -23,6 +23,19 @@
         <section class="intro">
             <h1>Bem-vindo ao PetShop Aumicão!</h1>
             <p>Oferecemos uma variedade de serviços para cuidar do seu pet, incluindo:</p>
+        </section>
+
+        <section class="counter-section" aria-label="Contador interativo">
+            <h2>Contador interativo</h2>
+            <p>Use os botões para aumentar, diminuir ou resetar o contador.</p>
+            <div class="counter-card">
+                <button id="decrement" type="button" aria-label="Diminuir">-</button>
+                <span id="counter-value">0</span>
+                <button id="increment" type="button" aria-label="Aumentar">+</button>
+            </div>
+            <div class="counter-actions">
+                <button id="reset" type="button">Resetar</button>
+            </div>
         </section>
 
         <section class="cards" aria-label="Serviços do petshop">
@@ -50,7 +63,32 @@
         <hr />
         <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
         <p>Telefone: (11) 1234-5678</p>
-        <p>© 2026 PetShop Aumicão. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        const counterValue = document.getElementById('counter-value');
+        const decrementBtn = document.getElementById('decrement');
+        const incrementBtn = document.getElementById('increment');
+        const resetBtn = document.getElementById('reset');
+        let count = 0;
+
+        function updateDisplay() {
+            counterValue.textContent = count;
+        }
+
+        incrementBtn.addEventListener('click', () => {
+            count += 1;
+            updateDisplay();
+        });
+
+        decrementBtn.addEventListener('click', () => {
+            count -= 1;
+            updateDisplay();
+        });
+
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            updateDisplay();
+        });
+    </script>
 </body>
 </html>
